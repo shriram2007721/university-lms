@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: lms-web
-          image: __IMAGE__
+          image: shriram1106/university-lms:1
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
