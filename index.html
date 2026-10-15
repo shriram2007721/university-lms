@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Learning Management Portal</title>
+  <style>
+    :root { --navy: #102a43; --blue: #2563eb; --pale: #eff6ff; --ink: #243247; --muted: #66758a; --line: #e4eaf2; --white: #fff; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: #f5f7fb; line-height: 1.5; }
+    header { color: white; background: linear-gradient(120deg, #102a43, #1d4ed8); padding: 28px max(22px, calc((100% - 1180px) / 2)); }
+    .brand { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; opacity: .85; }
+    h1 { margin: 8px 0; font-size: clamp(26px, 4vw, 40px); }
+    header p { margin: 0; color: #dbeafe; max-width: 740px; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    nav a { color: white; text-decoration: none; padding: 8px 12px; border: 1px solid #ffffff55; border-radius: 20px; font-size: 14px; }
+    nav a:hover { background: #ffffff20; }
+    main { max-width: 1180px; margin: 28px auto; padding: 0 18px 40px; }
+    .welcome { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+    .welcome h2 { margin: 0 0 4px; font-size: 24px; }
+    .welcome p { margin: 0; color: var(--muted); }
+    .term { background: #dbeafe; color: #1d4ed8; border-radius: 20px; padding: 8px 13px; font-size: 13px; font-weight: bold; white-space: nowrap; }
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    section.card { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 20px; box-shadow: 0 4px 15px #102a4308; grid-column: span 6; }
+    section.wide { grid-column: span 12; }
+    section.third { grid-column: span 4; }
+    h3 { margin: 0 0 14px; font-size: 18px; color: var(--navy); }
+    .course { display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+    .course:first-of-type { border-top: 0; padding-top: 0; }
+    .course-mark { display: grid; place-items: center; flex: 0 0 42px; height: 42px; background: var(--pale); color: var(--blue); border-radius: 12px; font-weight: bold; }
+    .course strong, .faculty strong { display: block; }
+    .small { color: var(--muted); font-size: 13px; }
+    .faculty-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .faculty { padding: 12px; border: 1px solid var(--line); border-radius: 12px; }
+    .avatar { display: grid; place-items: center; width: 40px; height: 40px; float: left; margin-right: 10px; border-radius: 50%; background: #e0e7ff; color: #3730a3; font-weight: bold; }
+    .resource, .announcement { padding: 12px 0; border-top: 1px solid var(--line); }
+    .resource:first-of-type, .announcement:first-of-type { border-top: 0; padding-top: 0; }
+    .resource a { color: var(--blue); text-decoration: none; font-weight: bold; }
+    .resource a:hover { text-decoration: underline; }
+    .pill { display: inline-block; border-radius: 5px; padding: 3px 7px; margin-right: 6px; background: #dcfce7; color: #166534; font-size: 11px; font-weight: bold; }
+    .pill.warn { background: #fef3c7; color: #92400e; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    th, td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--line); }
+    th { color: var(--muted); font-weight: bold; background: #f8fafc; }
+    footer { text-align: center; padding: 22px; color: var(--muted); border-top: 1px solid var(--line); font-size: 13px; }
+    @media (max-width: 760px) { section.card, section.third { grid-column: span 12; } .faculty-list { grid-template-columns: 1fr; } .welcome { align-items: flex-start; flex-direction: column; } table { font-size: 12px; } th, td { padding: 9px 6px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">University · Student Services</div>
+    <h1>Learning Management Portal</h1>
+    <p>Your central place for courses, faculty, resources, assignment announcements, and examination schedules.</p>
+    <nav aria-label="Main navigation">
+      <a href="#courses">My Courses</a><a href="#faculty">Faculty</a><a href="#resources">Resources</a><a href="#announcements">Announcements</a><a href="#exams">Exams</a>
+    </nav>
+  </header>
+  <main>
+    <div class="welcome">
+      <div><h2>Welcome back, Student!</h2><p>Here is your academic overview for this semester.</p></div>
+      <span class="term">FALL SEMESTER · 2026</span>
+    </div>
+    <div class="grid">
+      <section class="card" id="courses">
+        <h3>📘 My Courses</h3>
+        <div class="course"><div class="course-mark">SE</div><div><strong>Software Engineering</strong><div class="small">Dr. Priya Raman · Course code: SWE301</div></div></div>
+        <div class="course"><div class="course-mark">DB</div><div><strong>Database Management Systems</strong><div class="small">Prof. Arjun Kumar · Course code: CSE204</div></div></div>
+        <div class="course"><div class="course-mark">DS</div><div><strong>Data Structures and Algorithms</strong><div class="small">Dr. Meera Nair · Course code: CSE220</div></div></div>
+      </section>
+      <section class="card" id="faculty">
+        <h3>👩‍🏫 Faculty Profiles</h3>
+        <div class="faculty-list">
+          <div class="faculty"><span class="avatar">PR</span><strong>Dr. Priya Raman</strong><span class="small">Software Engineering</span></div>
+          <div class="faculty"><span class="avatar">AK</span><strong>Prof. Arjun Kumar</strong><span class="small">Database Systems</span></div>
+          <div class="faculty"><span class="avatar">MN</span><strong>Dr. Meera Nair</strong><span class="small">Algorithms</span></div>
+          <div class="faculty"><span class="avatar">SK</span><strong>Dr. Sanjay Kumar</strong><span class="small">Computer Networks</span></div>
+        </div>
+      </section>
+      <section class="card third" id="resources">
+        <h3>📚 Learning Resources</h3>
+        <div class="resource"><a href="#resources">Software Engineering notes</a><div class="small">Lecture slides · PDF</div></div>
+        <div class="resource"><a href="#resources">DBMS practice exercises</a><div class="small">SQL worksheets · Practice</div></div>
+        <div class="resource"><a href="#resources">DSA lab handbook</a><div class="small">Lab manual · PDF</div></div>
+      </section>
+      <section class="card third" id="announcements">
+        <h3>📢 Announcements</h3>
+        <div class="announcement"><span class="pill warn">Due soon</span><strong>DBMS Assignment 3</strong><div class="small">Submit through the course portal by 20 Oct 2026.</div></div>
+        <div class="announcement"><span class="pill">Updated</span><strong>Software Engineering project</strong><div class="small">Team proposal feedback is now available.</div></div>
+        <div class="announcement"><span class="pill">Reminder</span><strong>DSA Lab record</strong><div class="small">Bring your completed record to the next lab.</div></div>
+      </section>
+      <section class="card third">
+        <h3>✅ Quick Checklist</h3>
+        <div class="announcement"><strong>Review lecture notes</strong><div class="small">Software Engineering · Module 4</div></div>
+        <div class="announcement"><strong>Complete practice quiz</strong><div class="small">Database Management Systems</div></div>
+        <div class="announcement"><strong>Check project milestones</strong><div class="small">Next review: 22 Oct 2026</div></div>
+      </section>
+      <section class="card wide" id="exams">
+        <h3>🗓️ Examination Schedule</h3>
+        <table>
+          <thead><tr><th>Course</th><th>Date</th><th>Time</th><th>Venue</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Database Management Systems</td><td>26 Oct 2026</td><td>9:30 AM – 12:00 PM</td><td>Block A · 204</td><td><span class="pill warn">Upcoming</span></td></tr>
+            <tr><td>Software Engineering</td><td>28 Oct 2026</td><td>2:00 PM – 4:30 PM</td><td>Block B · 105</td><td><span class="pill warn">Upcoming</span></td></tr>
+            <tr><td>Data Structures and Algorithms</td><td>30 Oct 2026</td><td>9:30 AM – 12:00 PM</td><td>Block C · 301</td><td><span class="pill warn">Upcoming</span></td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+  <footer>University Learning Management Portal · Demo data for academic use</footer>
+</body>
+</html>
